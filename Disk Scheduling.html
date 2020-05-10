@@ -1,0 +1,31 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset = UTF-8>
+<title> WINDOWS 10 </title>
+<link rel="stylesheet" href="siddhi.css">
+</head>
+<body>
+<p>You don’t need to always rely on a tune-up tool like CCleaner to clean up your disk. Windows has a built-in utility you
+can make use of. The tool is Disk Cleanup. You can open this tool either from the start menu or Command Prompt.
+Disk Cleanup is not a new tool. It has been around since Windows 98 and still available on the current Windows version, 
+Windows 10. While you can open Disk Cleanup manually every time you think it’s time to clean up your disk, you can also
+make use of the Task Scheduler — another built-in utility of Windows — to regularly perform disk clean up.
+Both Disk Cleanup and Task Scheduler are available on all Windows versions, not just Windows 10. Thus, although the 
+example below is done on Windows 10, you should also follow the same steps for other Windows versions.</p>
+
+<p>To get started, open Task Scheduler. On Windows 10, you can find this tool under the Windows Administrative Tools 
+folder on the start menu.</p>
+<p>Give your task a name and description then click the Next button.</p>
+<p>Select the schedule period. Task Scheduler offers some options that you can use. In this example, I am going to select
+Monthly. Click the Next button to continue.</p>
+<p>On the next step — since you want to schedule Disk Cleanup — Select Start a program and click the Next button.</p>
+<p>Enter cleanmgr.exe on the Program/script field and click the Next button.</p>
+<p>On the next step, simply click the Finish button.</p>
+
+<p>Task Scheduler will add the task you have just scheduled on its library. The status is ready, yet is not running.
+You need to run it first to instruct Task Scheduler to run Disk Cleaner on the time you have specified. To do so, click 
+the Task Scheduler Library folder on the left panel. Select your task and click the Run button on the right panel.</p>
+<p>You can edit the scheduled task. If you want to change the schedule period, simply double-click the task and Task
+Scheduler will bring up the Properties window where you can change the applied parameters. Select the Triggers tab to 
+edit the schedule period.</p>

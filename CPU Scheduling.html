@@ -1,0 +1,37 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset = UTF-8>
+<title> WINDOWS 10 </title>
+<link rel="stylesheet" href="siddhi.css">
+</head>
+<body>
+<p>To begin the process, type sysdm.cpl in Run box and hit Enter to open the System Properties. Select the Advanced tab 
+and under Performance, click on Settings. In the Performance Options box, select the Advanced tab again. You will see a 
+section Processor Scheduling.</p>
+<p>There are 2 settings you can choose:<br>
+1-Adjust for best performance of Programs<br>
+2-Adjust for best performance of Background Services</p>
+<p>Just in case you wish to know, the PriorityControl key defines the foreground vs. background priority differential.
+The possible default values for Win32PrioritySeparation REG_DWORD 0, 1, or 2, with the default being  0x2.<br>
+This default value specifies the priority to give to the application running in the foreground. This application 
+receives more process or time relative to other applications running in the background, explains TechNet.. The values 
+here correlate to the following options in the Tasking dialog box: Value Meaning<br>
+0  -        Foreground and background applications equally responsive<br>
+1  -        Foreground application more responsive than background<br>
+2  -        Best foreground application response time.</p>
+
+<p>Using this feature, you can set up Windows, so that it is optimized to run programs or foreground services OR 
+Background Services, like printing or backing up, while you work in another program, simply by adjusting Processor 
+Scheduling. This way, Windows then knows how to distribute or allocate the available resources, to best perform these 
+tasks.<br>
+If you are using a desktop, you may leave the setting at its default or choose Adjust for best performance of Programs.
+Let us know if this results in a smoother, faster response time for your programs or foreground services.<br>
+However, if you use your PC as a Server or if you constantly have background services, such as printing or disk backup
+that run while you work and you want them to respond faster, you can have Windows share processor resources equally
+between background and foreground programs by choosing the other option, ie. Adjust for best performance of Background
+Services.<br>
+
+So you see, Windows now gives you an easy way to set Processor Scheduling. If you are an advanced user and wish to set 
+the values manually, you many use the follow the manual way in this post on how to get best performance for programs or
+background services.</p>

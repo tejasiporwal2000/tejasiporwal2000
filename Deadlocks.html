@@ -1,0 +1,40 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset = UTF-8>
+<title> WINDOWS 10 </title>
+<link rel="stylesheet" href="siddhi.css">
+</head>
+<body>
+<h3>Deadlock Detection</h3>
+<p>Deadlock Detection monitors the driver&#39;s use of resources which need to be locked spin locks, mutexes, and fast 
+mutexes. This Driver Verifier option will detect code logic that has the potential to cause a deadlock at some future point.
+The Deadlock Detection option of Driver Verifier, along with the !deadlock kernel debugger extension, is an effective tool for making sure your code avoids poor use
+of these resources.
+Deadlock Detection is supported only in Windows XP and later versions of Windows.</p>
+
+<h3>Resources That Can Cause Deadlocks</h3>
+The most unambiguous deadlocks are the result of owned resources. These include spin locks, mutexes, fast mutexes, 
+and ERESOURCEs.Resources that are signaled rather than acquired (such as events and LPC ports)tend to cause much 
+more ambiguous deadlocks. It is of course possible, and all too common, for code to misuse these resources in such a
+way that two threads will end up waiting indefinitely for each other to complete. However, since these resources
+are not actually owned by any one thread, it is not possible to identify the delinquent thread with any degree of
+certainty.
+The Deadlock Detection option of Driver Verifier looks for potential deadlocks involving spin locks, mutexes, and fast
+mutexes. It does not monitor the use of ERESOURCEs, nor does it monitor the use of nonowned resources.</p>
+
+<h3>Debugging a Deadlock</h3>
+When a thread needs exclusive access to code or some other resource, it requests a lock. If it can, Windows responds by 
+giving this lock to the thread. At this point,nothing else in the system can access the locked code. This happens all
+the time and is a normal part of any well-written multithreaded application. Although a particular code segment can 
+only have one lock on it at a time, multiple code segments can each have their own lock.A deadlock arises when two or more threads have requested locks on two or more
+resources, in an incompatible sequence. For instance, suppose that Thread One has acquired a lock on Resource A and then 
+requests access to Resource B. Meanwhile, Thread Two has acquired a lock on Resource B and then requests access to
+Resource A. Neither thread can proceed until the other thread&#39;s lock is relinquished, and, therefore, neither thread 
+can proceed.
+User-mode deadlocks arise when multiple threads, usually of a single application,have blocked each other&#39;s access
+to the same resource. However, multiple threads of multiple applications can also block each other&#39;s access to a 
+global/shared resource, such as a global event, or semaphore. Kernel-mode deadlocks arise when multiple threads
+(from the same process or from distinct processes) have blocked each others&#39; access to the same kernel resource.
+The procedure used to debug a deadlock depends on whether the deadlock occurs in user mode or in kernel mode.</p?
+

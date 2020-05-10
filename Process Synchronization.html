@@ -1,0 +1,22 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset = UTF-8>
+<title> WINDOWS 10 </title>
+<link rel="stylesheet" href="siddhi.css">
+</head>
+<body>
+Windows operating system is a multithreaded kernel that provide support for real time application and multiprocessors. 
+On uniprocessor system, Windows provides interrupt masks to protect access to global resources. It protects access to 
+global resource using spinlock. The kernel uses spinlocks only to protect short code segment like Solaris. The kernel 
+ensures that while holding a spinlock, a thread will never be preempted.
+Windows provide dispatcher object for thread synchronization according to several different mechanisms including mutexes,
+semaphores, events and timers. The system protects shared data by requiring a thread to gain ownership of a mutex for
+accessing the data and when it is finished, releases the ownership.</p>
+<h3>Events </h3><p>acts as a conditional variable to notify a waiting thread when desired condition occurs.</p>
+<h3>Timers are </h3><p>used to notify one or more thread when time expired.</p>
+<h3>Dispatcher </h3><p>objects may be either signaled state or a non-signaled state.</p>
+<p>Signaled state indicates that an object is available and a thread will not block when acquiring the object.
+Non-signaled state indicates that an object is not available and a thread will block when trying to acquire the object.
+The below figure shows the state transitions of a mutex lock dispatcher object -<p>
+<img src="dispatcher.jpeg" alt="Dispatcher Object" width="100" height="200">

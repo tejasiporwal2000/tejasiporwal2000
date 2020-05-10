@@ -1,0 +1,51 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset = UTF-8>
+<title> WINDOWS 10 </title>
+<link rel="stylesheet" href="siddhi.css">
+</head>
+<body>
+<h3>Memory Management in Windows 10</h3>
+With the Windows 10 Insider program back up and running, the Windows team is giving Insiders some insight into how
+Windows 10 is using new memory compressions to tighten up memory management. In a rather extensive posting
+found in the Insider Hub (yes, it’s back), the Windows team covers memory policies and the new Memory Compression built
+into Windows 10. Without true competition in the market, Microsoft could withstand the deleterious perception Windows 
+was slowly incurring over the years. As times have changed, so has Microsoft’s awareness, at least publically, of users 
+poor perception of Windows.
+“One of the primary goals of any operating system is to manage and share resources efficiently. How well and operating
+system arbitrates competing memory
+requirements is particularly important, because it impacts the user’s perception of system responsiveness.” To combat 
+this, Microsoft has enabled the Memory Manager (MM) to compress infrequently used memory pages. Doing so, reduces the
+number of reads and writes to the disk and results in improved responsiveness from the operating system. The new Memory
+compression reduces the amount of memory used during applications while simultaneously allowing the operating system to 
+maintain more applications in physical memory. Specifically, Memory Manager’s new policy compresses data being written to
+or read from the disk down to  40% of its original size. Ultimately,users should notice faster animations snappier 
+enlaunching apps.
+
+
+<p>Prior to the change, Windows team discusses how Windows 8 handled MM. “But when Windows 8 added the ability for Universal
+Windows Platform (UWP) applications had to be swapped out in their entirety – i.e. at app rather than page granularity.”
+Apparently, the reason for this happened to do with Microsoft choosing to suspended UWP apps when they were not in the foreground, very similar to some smartphone OS management. Windows 8 users understood (perhaps not) that if apps weren’t on screen, they wouldn’t run until the user switched back to them. The ‘all or nothing’ approach is being updated with Windows 10 introducing a layer between the pagefile and normal paging activity. Now, when faced with memory pressure issues, MM will determine which pages should be moved to the modified list in a process called trimming. The modified list is a secondary list of pagefiles backing up a list of standby pagefiles. A backup list is captured in case memory is reclaimed from the standby list by another process, and the original process comes looking for its page. Instead of all or nothing, Windows 10 MM will compress unused pages rather than writing them to disk. With less writing, the result should be fewer disk operations – thanks to the compression – and now more data can be stored in memory.<br>
+Similar to a recycling process, Windows 10 now uses a concept called compression store, where collected compressed pages 
+are sorted out. While Microsoft may have sought to deprecate the desktop, Windows 10 is fully embracing it once again. 
+Doing so, however, means a mix of Windows desktop and non-UWP apps all vying for memory. The compression store now sorts 
+through a collection of compressed pages by Windows Runtime (enabling trimming and swapping) and Windows desktop apps, 
+then stores them accordingly for better use. [pullquote align=”left” cite=”” link=”” color=”” class=”” size=””]Windows 10
+writes pages out to disk only 50% as often as previous versions of the OS<br>
+According to the Windows team, “In practice, compressed memory takes up about40% of the uncompressed size, and as a
+result of a typical device running a typical workload, Windows 10 writes pages out to disk only 50% as often as previous 
+versions of the OS.” If all goes according to plan, Windows users could be experiencing reduced waiting times for all 
+devices as well as extended lifespans on systems that have flash-based hard drives.<br>
+With a bit of understanding around compression, getting the data back or decompression is a much easier concept. 
+Decompression is also something Windows 10 is designed to do well. Windows 10 is using the combination of
+parallelizability and sequential reads to produce pages into memory once called. The new decompression should result in 
+a speedier experience as Windows 10 is simultaneously decompressing data and reading it in parallel using multiple CPUs. 
+Older versions of Windows may have felt sluggish because of the transfer rates between the disk.<br>
+Microsoft seems to be finally taking perceptual criticism about Windows to heart. The new Memory compression concepts 
+should help in making Windows 10 appear snappier and more responsive than earlier versions, even on existing hardware.
+By making better use of available memory through reduced memory utilization, Windows users who once complained about 
+‘how slow’ Windows felt, may now attribute their lackluster experiences to hardware rather than Microsoft’s software.<br>
+
+For those wondering, this new memory feature is available right now on Windows 10 build 10525, via the Windows Insider 
+Program. This feature will eventually be rolled out to non-insiders.</p>

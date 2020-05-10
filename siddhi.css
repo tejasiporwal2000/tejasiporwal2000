@@ -1,0 +1,25 @@
+body{
+background-color:yellow;
+}
+header{
+background-color:#33ff00;
+}
+h1{
+text-align:center;
+color:#1000ff;
+}
+h2{
+text-align:left;
+color:#ff00f7;
+}
+h4{
+text-align:right;
+color:red;
+}
+section{
+background-color:#3c363687;
+}
+a:link {
+font-color:##00ffe7;
+background-color:#00ffe7;
+}
